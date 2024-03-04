@@ -25,75 +25,71 @@ class Program
 
         static void SeedData(List<IEmployee> employees)
         {
-            IEmployee teacher1 = new Teacher()
-            {
-                Id = 1,
-                FirstName = "Jim",
-                LastName = "Smith",
-                Salary = 54000
-            };
-
+            IEmployee teacher1 = EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 1, "Jim", "Smith", 54000);
             employees.Add(teacher1);
 
-            IEmployee teacher2 = new Teacher()
-            {
-                Id = 2,
-                FirstName = "Ron",
-                LastName = "Black",
-                Salary = 34332
-            };
-
+            IEmployee teacher2 = EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 2, "Ron", "Black", 34332);
             employees.Add(teacher2);
 
-            IEmployee headOfDepartment = new HeadOfDepartment()
-            {
-                Id = 3,
-                FirstName = "Peter",
-                LastName = "Parker",
-                Salary = 76000
-            };
-
+            IEmployee headOfDepartment = EmployeeFactory.GetEmployeeInstance(EmployeeType.HeadOfDepartment, 3, "Peter", "Parker", 76000);
             employees.Add(headOfDepartment);
 
-            IEmployee vicePrincipal = new VicePrincipal()
-            {
-                Id = 4,
-                FirstName = "Tony",
-                LastName = "Stark",
-                Salary = 87774
-            };
-
+            IEmployee vicePrincipal = EmployeeFactory.GetEmployeeInstance(EmployeeType.VicePrincipal, 4, "Tony", "Stark", 87774);
             employees.Add(vicePrincipal);
 
-            IEmployee principal = new Principal()
-            {
-                Id = 5,
-                FirstName = "Paul",
-                LastName = "Jones",
-                Salary = 98377
-            };
-
+            IEmployee principal = EmployeeFactory.GetEmployeeInstance(EmployeeType.VicePrincipal, 5, "Paul", "Jones", 98377);
             employees.Add(principal);
         }
     }
-}
 
-public class Teacher : EmployeeBase
-{
-    public override decimal Salary => base.Salary + base.Salary * 0.02m;
-}
 
-public class HeadOfDepartment : EmployeeBase
-{
-    public override decimal Salary => base.Salary + base.Salary * 0.05m;
-}
+    public class Teacher : EmployeeBase
+    {
+        public override decimal Salary => base.Salary + base.Salary * 0.02m;
+    }
 
-public class VicePrincipal : EmployeeBase
-{
-    public override decimal Salary => base.Salary + base.Salary * 0.1m;
-}
+    public class HeadOfDepartment : EmployeeBase
+    {
+        public override decimal Salary => base.Salary + base.Salary * 0.05m;
+    }
 
-public class Principal : EmployeeBase
-{
-    public override decimal Salary => base.Salary + base.Salary * 0.2m;
+    public class VicePrincipal : EmployeeBase
+    {
+        public override decimal Salary => base.Salary + base.Salary * 0.1m;
+    }
+
+    public class Principal : EmployeeBase
+    {
+        public override decimal Salary => base.Salary + base.Salary * 0.2m;
+    }
+
+    public static class EmployeeFactory
+    {
+        public static IEmployee GetEmployeeInstance(EmployeeType employeeType, int id, string firstName,
+            string lastName, decimal salary)
+        {
+            IEmployee employee = null!;
+
+            switch (employeeType)
+            {
+                case EmployeeType.Teacher:
+                    employee = new Teacher { Id = id, FirstName = firstName, LastName = lastName, Salary = salary };
+                    break;
+                case EmployeeType.HeadOfDepartment:
+                    employee = new HeadOfDepartment { Id = id, FirstName = firstName, LastName = lastName, Salary = salary };
+                    break;
+                case EmployeeType.VicePrincipal:
+                    employee = new VicePrincipal { Id = id, FirstName = firstName, LastName = lastName, Salary = salary };
+                    break;
+                case EmployeeType.Principal:
+                    employee = new Principal { Id = id, FirstName = firstName, LastName = lastName, Salary = salary };
+                    break;
+            }
+
+            return employee;
+        }
+
+        
+    }
+
 }
