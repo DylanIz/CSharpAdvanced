@@ -1,103 +1,99 @@
 ﻿using HRAdinAPI;
 
 
-
-decimal totalSalaries = 0;
-List<IEmployee> employees = new List<IEmployee>();
-
-SeedData(employees);
-
-//foreach (IEmployee employee in employees)
-//{
-//    totalSalaries += employee.Salary;
-//}
-
-Console.WriteLine($"Total Salaries (inc bonus): {employees.Sum(e => e.Salary)}");
-
-Console.ReadKey();
-
-
-static void SeedData(List<IEmployee> employees)
+public enum EmployeeType
 {
-    IEmployee teacher1 = new Teacher()
+    Teacher,
+    HeadOfDepartment,
+    VicePrincipal,
+    Principal,
+}
+
+class Program
+{
+    public static void Main(string[] args)
     {
-        Id = 1,
-        FirstName = "Jim",
-        LastName = "Smith",
-        Salary = 54000
-    };
+        decimal totalSalaries = 0;
+        List<IEmployee> employees = new List<IEmployee>();
 
-    employees.Add(teacher1);
+        SeedData(employees);
 
-    IEmployee teacher2 = new Teacher()
-    {
-        Id = 2,
-        FirstName = "Ron",
-        LastName = "Black",
-        Salary = 34332
-    };
 
-    employees.Add(teacher2);
+        Console.WriteLine($"Total Salaries (inc bonus): {employees.Sum(e => e.Salary)}");
 
-    IEmployee headOfDepartment = new HeadOfDepartment()
-    {
-        Id = 3,
-        FirstName = "Peter",
-        LastName = "Parker",
-        Salary = 76000
-    };
+        Console.ReadKey();
 
-    employees.Add(headOfDepartment);
+        static void SeedData(List<IEmployee> employees)
+        {
+            IEmployee teacher1 = new Teacher()
+            {
+                Id = 1,
+                FirstName = "Jim",
+                LastName = "Smith",
+                Salary = 54000
+            };
 
-    IEmployee vicePrincipal = new VicePrincipal()
-    {
-        Id = 4,
-        FirstName = "Tony",
-        LastName = "Stark",
-        Salary = 87774
-    };
+            employees.Add(teacher1);
 
-    employees.Add(vicePrincipal);
+            IEmployee teacher2 = new Teacher()
+            {
+                Id = 2,
+                FirstName = "Ron",
+                LastName = "Black",
+                Salary = 34332
+            };
 
-    IEmployee principal = new Principal()
-    {
-        Id = 5,
-        FirstName = "Paul",
-        LastName = "Jones",
-        Salary = 98377
-    };
+            employees.Add(teacher2);
 
-    employees.Add(principal);
+            IEmployee headOfDepartment = new HeadOfDepartment()
+            {
+                Id = 3,
+                FirstName = "Peter",
+                LastName = "Parker",
+                Salary = 76000
+            };
+
+            employees.Add(headOfDepartment);
+
+            IEmployee vicePrincipal = new VicePrincipal()
+            {
+                Id = 4,
+                FirstName = "Tony",
+                LastName = "Stark",
+                Salary = 87774
+            };
+
+            employees.Add(vicePrincipal);
+
+            IEmployee principal = new Principal()
+            {
+                Id = 5,
+                FirstName = "Paul",
+                LastName = "Jones",
+                Salary = 98377
+            };
+
+            employees.Add(principal);
+        }
+    }
 }
 
 public class Teacher : EmployeeBase
 {
-    public override decimal Salary
-    {
-        get => base.Salary + base.Salary * 0.02m;
-    }
+    public override decimal Salary => base.Salary + base.Salary * 0.02m;
 }
 
 public class HeadOfDepartment : EmployeeBase
 {
-    public override decimal Salary
-    {
-        get => base.Salary + base.Salary * 0.05m;
-    }
+    public override decimal Salary => base.Salary + base.Salary * 0.05m;
 }
 
 public class VicePrincipal : EmployeeBase
 {
-    public override decimal Salary
-    {
-        get => base.Salary + base.Salary * 0.1m;
-    }
+    public override decimal Salary => base.Salary + base.Salary * 0.1m;
 }
 
 public class Principal : EmployeeBase
 {
-    public override decimal Salary
-    {
-        get => base.Salary + base.Salary * 0.2m;
-    }
+    public override decimal Salary => base.Salary + base.Salary * 0.2m;
 }
