@@ -1,6 +1,6 @@
 ﻿namespace HRAdinAPI;
 
-interface IEmployee
+public interface IEmployee
 {
     int Id { get; set; }
 

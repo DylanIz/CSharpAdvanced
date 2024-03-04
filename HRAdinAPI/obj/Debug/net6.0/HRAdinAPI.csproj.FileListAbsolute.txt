@@ -1,0 +1,11 @@
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\bin\Debug\net6.0\HRAdinAPI.deps.json
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\bin\Debug\net6.0\HRAdinAPI.dll
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\bin\Debug\net6.0\HRAdinAPI.pdb
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.AssemblyInfoInputs.cache
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.AssemblyInfo.cs
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.csproj.CoreCompileInputs.cache
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.dll
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\refint\HRAdinAPI.dll
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\HRAdinAPI.pdb
+C:\Users\DDrumgoole\Documents\GitHub\C# Advanced\CSharpAdvanced\HRAdinAPI\obj\Debug\net6.0\ref\HRAdinAPI.dll
